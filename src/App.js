@@ -19,7 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 class FCACheck extends Component {
   render() {
     return (
-       <Redirect to="/mock/register/regular" />
+       <Redirect to={process.env.PUBLIC_URL + "/mock/register/regular"} />
     )
   }
 }
@@ -40,14 +40,14 @@ class SignUp extends Component {
         </div>
         <div>
           <Container style={{display: 'flex', justifyContent: 'center', padding:"1em",}}>
-            <NavLink to="/mock/register" className="btn btn-success">Sign Up</NavLink>
+            <NavLink to={process.env.PUBLIC_URL + "/mock/register"} className="btn btn-success">Sign Up</NavLink>
           </Container> 
         </div>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           Already a member?
         </div>
         <div style={{display: 'flex', justifyContent: 'center'}}>
-          <NavLink to="/mock/login"> Sign In</NavLink>
+          <NavLink to={process.env.PUBLIC_URL + "/mock/login"}> Sign In</NavLink>
         </div>
         </Jumbotron>
       </div>
@@ -129,14 +129,14 @@ class App extends Component {
                 @productname
               </ToastHeader>
             
-              <Route exact path="/mock/" component={SignUp} />
-              <Route exact path="/mock/register" component={FCACheck} />
-              <Route exact path="/mock/register/employee" 
+              <Route exact path={process.env.PUBLIC_URL + "/mock/"} component={SignUp} />
+              <Route exact path={process.env.PUBLIC_URL + "/mock/register"} component={FCACheck} />
+              <Route exact path={process.env.PUBLIC_URL + "/mock/register/employee" }
                 render={(props) => <Register {...props} usertype="FCA"/>} />
-              <Route exact path="/mock/register/regular" 
+              <Route exact path={process.env.PUBLIC_URL + "/mock/register/regular"} 
                 render={(props) => <Register {...props} usertype="Regular"/>} />
-              <Route exact path="/mock/login" component={LoginMopar} />
-              <Route exact path="/mock/dashboard" component={Dashboard} />
+              <Route exact path={process.env.PUBLIC_URL + "/mock/login"} component={LoginMopar} />
+              <Route exact path={process.env.PUBLIC_URL + "/mock/dashboard"} component={Dashboard} />
               <ToastBody>
                 <a href="https://umich.edu">Copyright © 2020 <br></br>University of Michigan</a>
               </ToastBody>

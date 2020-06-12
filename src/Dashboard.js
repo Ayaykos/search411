@@ -54,9 +54,9 @@ class Dashboard extends Component {
         <Router>
           <div style={{display: 'flex', justifyContent: 'center'}}>
             <Switch>
-              <Route exact path="/mock/dashboard/getstarted" component={GetStarted} />
-              <Route exact path="/mock/dashboard/features" component={BetaFeatures} />
-              <Route exact path="/mock/dashboard/faq" component={FAQ} />
+              <Route exact path={process.env.PUBLIC_URL + "/mock/dashboard/getstarted"} component={GetStarted} />
+              <Route exact path={process.env.PUBLIC_URL + "/mock/dashboard/features"} component={BetaFeatures} />
+              <Route exact path={process.env.PUBLIC_URL + "/mock/dashboard/faq"} component={FAQ} />
 
             </Switch>
           </div>
