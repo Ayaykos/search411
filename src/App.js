@@ -126,7 +126,7 @@ class App extends Component {
             <Switch>
             <Toast>
               <ToastHeader>
-                @shrek
+                @productname
               </ToastHeader>
             
               <Route exact path="/mock/" component={SignUp} />
