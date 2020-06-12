@@ -54,11 +54,11 @@ class LoginMopar extends Component {
               <a style={{color:"green"}} href="https://www.mopar.com/en-us/sign-in.html?tab=register">Don't have an account?</a>
             </div>
             <div style={{display: 'flex', justifyContent: 'right'}}>
-            <NavLink to="/mock/dashboard" 
+            <NavLink to={process.env.PUBLIC_URL +"/mock/dashboard"}
             className="btn btn-success">Let's go ></NavLink>
             </div>
             <div style={{display: 'flex', justifyContent: 'right'}}>
-          <NavLink to="/mock/" 
+          <NavLink to={process.env.PUBLIC_URL +"/mock/"}
             className="btn btn-success">Back</NavLink>
           </div>
           </div>

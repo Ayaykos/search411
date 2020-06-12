@@ -1,8 +1,8 @@
 {
-  "name": "client",
+  "name": "search411",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ayaykos.github.io/search411/",
+  "homepage": "https://ayaykos.github.io/search411",
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -47,6 +47,5 @@
   "devDependencies": {
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
-  },
-  "proxy":"https://ayaykos.github.io/search411/"
+  }
 }

@@ -39,19 +39,16 @@ class Register extends Component {
   };
   render() {
     const { email, username, password } = this.state;
-    if (this.state.registerSuccess) {
-      return (<Redirect to="/" />
-      )
-    }
+
     return (  
       <div>
         <Jumbotron>
         <div>
-      <p style={{display: 'flex', justifyContent: 'center'}}>Register</p>
+      <h4 style={{color:'green',display: 'flex', 
+      justifyContent: 'center'}}>Register</h4>
       </div>
       <Container className="App">
 
-        <Form className="form" onSubmit={(e) => this.setState({registerSuccess:true})}>
           <Col>
             <FormGroup>
               <Input
@@ -121,7 +118,6 @@ class Register extends Component {
             </FormGroup>
           </Col>
           <Button color="success">Submit</Button>
-        </Form>
       </Container>
       </Jumbotron>
       </div>

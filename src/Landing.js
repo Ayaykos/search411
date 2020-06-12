@@ -137,7 +137,7 @@ class Landing extends Component {
           <hr className="my-2" />
           <p style={{display: 'flex', justifyContent: 'center'}}>Extended description.</p>
           <div style={{display: 'flex', justifyContent: 'center'}}>
-          <NavLink to="/mock/" className="btn btn-primary">Mock Website</NavLink>
+          <NavLink to={process.env.PUBLIC_URL + "/mock/"} className="btn btn-primary">Mock Website</NavLink>
           </div>
         </Jumbotron>
       <div>
@@ -192,15 +192,15 @@ class LandingPage extends Component {
             <Router>
             <div>
                 <Switch>
-                    <Route exact path="/" component={Landing} />
-                    <Route exact path="/mock" component={App} />
-                    <Route exact path="/mock/register" component={FCACheck} />
-                    <Route exact path="/mock/register/employee" 
+                    <Route exact path={process.env.PUBLIC_URL +"/"} component={Landing} />
+                    <Route exact path={process.env.PUBLIC_URL +"/mock"} component={App} />
+                    <Route exact path={process.env.PUBLIC_URL +"/mock/register"} component={FCACheck} />
+                    <Route exact path={process.env.PUBLIC_URL +"/mock/register/employee"} 
                         render={(props) => <Register {...props} usertype="FCA"/>} />
-                    <Route exact path="/mock/register/regular" 
+                    <Route exact path={process.env.PUBLIC_URL +"/mock/register/regular"} 
                         render={(props) => <Register {...props} usertype="Regular"/>} />
-                    <Route exact path="/mock/login" component={LoginMopar} />
-                    <Route exact path="/mock/dashboard" component={Dashboard} />
+                    <Route exact path={process.env.PUBLIC_URL +"/mock/login"} component={LoginMopar} />
+                    <Route exact path={process.env.PUBLIC_URL +"/mock/dashboard"} component={Dashboard} />
                 </Switch>
             </div>
             </Router>
