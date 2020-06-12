@@ -28,7 +28,7 @@ class AppNavbar extends Component {
     <div>
       <Navbar color="success">
         <Container>
-          <a href="/mock" >
+          <a href="/search411/mock" >
             <h4 style={{color:"white"}}>Logo</h4>
           </a>
 
@@ -47,11 +47,11 @@ class AppNavbar extends Component {
               <DropdownItem color="light">Profile</DropdownItem>
               <DropdownItem>Find Other Interns</DropdownItem>
               <DropdownItem>Find Recruiters</DropdownItem>
-              <DropdownItem href="/mock">Sign Out</DropdownItem>
+              <DropdownItem href="/search411/mock">Sign Out</DropdownItem>
             </DropdownMenu>
           </ButtonDropdown>
         </ButtonGroup >
-        <Button color="light"href="/">Exit Mockup</Button>
+        <Button color="light"href="/search411/">Exit Mockup</Button>
         </Container> 
 
       </Navbar>

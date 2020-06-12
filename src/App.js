@@ -34,7 +34,7 @@ class SignUp extends Component {
         </p>
         <div style={{display: 'flex', justifyContent: 'center', 
           padding:"2em", bgcolor: "grey"}}>
-          <a href="/mock" >
+          <a href="/search411/mock" >
           <h1>Logo</h1>
           </a>
         </div>

@@ -48,10 +48,10 @@ class LoginMopar extends Component {
 
           <div >
             <div style={{display: 'flex', justifyContent: 'right'}}>
-              <a style={{color:"green"}} href="https://www.mopar.com/en-us/forgot-password.html">Forgot your password?</a>
+              <a style={{color:"green"}} >Forgot your password?</a>
             </div>
             <div style={{display: 'flex', justifyContent: 'right'}}>
-              <a style={{color:"green"}} href="https://www.mopar.com/en-us/sign-in.html?tab=register">Don't have an account?</a>
+              <a style={{color:"green"}} >Don't have an account?</a>
             </div>
             <div style={{display: 'flex', justifyContent: 'right'}}>
             <NavLink to={process.env.PUBLIC_URL +"/mock/dashboard"}

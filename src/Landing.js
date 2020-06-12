@@ -74,7 +74,6 @@ class Landing extends Component {
     })  
     axios.post(this.state.CORS_PROXY + this.state.GOOGLE_FORM_ACTION_URL, formData)
       .then(() => {     
-        console.log('asdasd')
         this.setState({     
           email: '',
           validate: {
