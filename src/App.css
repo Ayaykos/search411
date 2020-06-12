@@ -1,3 +1,22 @@
+.bottomthing {
+  border: 1px solid #DDDDDD;
+  position: relative;
+  background-color: #92AD40;
+  opacity:0.5;
+}
+.topthing {
+  position: absolute;
+  z-index: 1000;
+  padding: 5px;
+  color: #FFFFFF;
+}
+.transparent {
+  background-color: #92AD40;
+  opacity:0.5;
+}
+.bgimages{
+  background-image: url(./img/bgscroll1.jpg);
+}
 .App {
   text-align: center;
 }
