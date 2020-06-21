@@ -48,7 +48,7 @@ const Register = (props) => {
       <div >
         <div style={{display: 'flex', justifyContent: 'right'}}>
           <NavLink to={process.env.PUBLIC_URL +"/mock/dashboard"}
-          className="btn btn-success">Let's go {'>'}</NavLink>
+          className="btn btn-success">Submit {'>'}</NavLink>
         </div>
         <div style={{display: 'flex', justifyContent: 'right'}}>
           <NavLink to={process.env.PUBLIC_URL +"/mock/"}

@@ -5,7 +5,7 @@ import { Button, ButtonGroup, ButtonDropdown,
         DropdownToggle, Collapse, Navbar,
         NavbarToggler, NavbarBrand, Nav,
         NavItem, NavLink, Container, Progress } from 'reactstrap';
-
+import Recruiters from '../Recruiters'
 
 class AppNavbar extends Component {
   constructor(props){
@@ -44,9 +44,11 @@ class AppNavbar extends Component {
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem color="light">Profile</DropdownItem>
-              <DropdownItem>Find Other Interns</DropdownItem>
-              <DropdownItem>Find Recruiters</DropdownItem>
-              <DropdownItem href="/search411/mock">Sign Out</DropdownItem>
+              <DropdownItem href={process.env.PUBLIC_URL +"/mock/dashboard"}>
+                Find Other Interns</DropdownItem>
+              <DropdownItem href={process.env.PUBLIC_URL +"/mock/recruiters"}>
+                Find Recruiters</DropdownItem>
+              <DropdownItem href={process.env.PUBLIC_URL}>Sign Out</DropdownItem>
             </DropdownMenu>
           </ButtonDropdown>
         </ButtonGroup >

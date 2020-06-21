@@ -190,6 +190,8 @@ class LandingPage extends Component {
                 <Route exact path={process.env.PUBLIC_URL +"/mock/login"} component={App} />
                 <Route exact path={process.env.PUBLIC_URL +"/mock/register"} component={App} />
                 <Route exact path={process.env.PUBLIC_URL +"/mock/dashboard"} component={App} />
+                <Route exact path={process.env.PUBLIC_URL +"/mock/recruiters"} component={App} />
+                <Route exact path={process.env.PUBLIC_URL +"/mock/interns"} component={App} />
               </Switch>
             </div>
             </Router>

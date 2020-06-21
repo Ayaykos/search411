@@ -7,6 +7,8 @@ import MainMenu from './MainMenu';
 import Register from './Register';
 import Login from './Login';
 import Comments from './Comments';
+import Recruiters from './Recruiters';
+import Interns from './Interns';
 import BackgroundSlider from './components/BackgroundSlider'
 import './css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -38,6 +40,12 @@ class App extends Component {
               component={Comments}/>
             <Route exact path={process.env.PUBLIC_URL + "/mock/dashboard"} 
               render={() => (<Comments logged_in={true}/>)} />
+
+            <Route exact path={process.env.PUBLIC_URL + "/mock/interns"} 
+              render={() => (<Interns/>)} />
+
+              <Route exact path={process.env.PUBLIC_URL + "/mock/recruiters"} 
+              render={() => (<Recruiters/>)} />
             </Switch>
             <Switch>
 
