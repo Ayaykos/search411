@@ -1,28 +1,26 @@
 {
   "files": {
-    "main.css": "/search411/static/css/main.428dc187.chunk.css",
-    "main.js": "/search411/static/js/main.7d427e86.chunk.js",
-    "main.js.map": "/search411/static/js/main.7d427e86.chunk.js.map",
+    "main.css": "/search411/static/css/main.128d23ef.chunk.css",
+    "main.js": "/search411/static/js/main.dba9749c.chunk.js",
+    "main.js.map": "/search411/static/js/main.dba9749c.chunk.js.map",
     "runtime-main.js": "/search411/static/js/runtime-main.634ab0ec.js",
     "runtime-main.js.map": "/search411/static/js/runtime-main.634ab0ec.js.map",
     "static/css/2.af3c1da9.chunk.css": "/search411/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.06b1be13.chunk.js": "/search411/static/js/2.06b1be13.chunk.js",
-    "static/js/2.06b1be13.chunk.js.map": "/search411/static/js/2.06b1be13.chunk.js.map",
+    "static/js/2.bb12fbeb.chunk.js": "/search411/static/js/2.bb12fbeb.chunk.js",
+    "static/js/2.bb12fbeb.chunk.js.map": "/search411/static/js/2.bb12fbeb.chunk.js.map",
     "index.html": "/search411/index.html",
-    "precache-manifest.1bc2f5f58d487a910338489e0d4fcd78.js": "/search411/precache-manifest.1bc2f5f58d487a910338489e0d4fcd78.js",
+    "precache-manifest.6353a0d9e1431c23c9bf81ff50405256.js": "/search411/precache-manifest.6353a0d9e1431c23c9bf81ff50405256.js",
     "service-worker.js": "/search411/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/search411/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.428dc187.chunk.css.map": "/search411/static/css/main.428dc187.chunk.css.map",
-    "static/js/2.06b1be13.chunk.js.LICENSE.txt": "/search411/static/js/2.06b1be13.chunk.js.LICENSE.txt",
-    "static/media/UconnectlabBetaWhite.png": "/search411/static/media/UconnectlabBetaWhite.cb4a1686.png",
-    "static/media/basebg.png": "/search411/static/media/basebg.4216755a.png",
-    "static/media/App.css": "/search411/static/media/bgscroll1.c8667306.jpg"
+    "static/css/main.128d23ef.chunk.css.map": "/search411/static/css/main.128d23ef.chunk.css.map",
+    "static/js/2.bb12fbeb.chunk.js.LICENSE.txt": "/search411/static/js/2.bb12fbeb.chunk.js.LICENSE.txt",
+    "static/media/background.png": "/search411/static/media/background.9a157536.png"
   },
   "entrypoints": [
     "static/js/runtime-main.634ab0ec.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.06b1be13.chunk.js",
-    "static/css/main.428dc187.chunk.css",
-    "static/js/main.7d427e86.chunk.js"
+    "static/js/2.bb12fbeb.chunk.js",
+    "static/css/main.128d23ef.chunk.css",
+    "static/js/main.dba9749c.chunk.js"
   ]
 }
