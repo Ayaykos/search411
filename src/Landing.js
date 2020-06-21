@@ -13,9 +13,11 @@ import {
   Button,
   Spinner
 } from "reactstrap";
+import Highlighter from "react-highlight-words";
+import { MdLaptopMac } from "react-icons/md";
+import ParticlesBg from "particles-bg";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios';
-
 
 class Loading extends Component {
   render() {
@@ -130,17 +132,28 @@ class Landing extends Component {
           <hr className="my-2" />
           <p className="lead" 
             style={{display: 'flex', justifyContent: 'center'}}>
-            Description of our problem/solution.</p>
+            <Highlighter
+              highlightClassName="YourHighlightClass"
+              searchWords={["future interns", "young job seekers"]}
+              autoEscape={true}
+              textToHighlight="We're looking to make the recruiting process easier for 
+              future interns and young job seekers."/>
+          </p>
           <hr className="my-2" />
           <p style={{display: 'flex', justifyContent: 'center'}}>
-              Extended description.</p>
+            To test out our proof of concept, we built a mock website
+            that mimicks what we expect the platform to be like.</p>
           <div style={{display: 'flex', justifyContent: 'center'}}>
           <NavLink to={process.env.PUBLIC_URL + "/mock"} 
-            className="btn btn-primary">Mock Website</NavLink>
+            className="btn btn-primary">Check out mock website <MdLaptopMac /></NavLink>
           </div>
+          <ParticlesBg type="circle" bg={true}/>
         </Jumbotron>
+
       <div>
         <h3 style={{textAlign:"center"}}>Interested?</h3>
+        <p style={{textAlign:"center"}}>Sign up now to get the latest
+        updates and early user privileges.</p>
       </div>
       <div style={{display: 'flex', justifyContent: 'center'}}>
       <h2 style={{textAlign:"center"}}>{this.props.usertype}</h2>
@@ -168,7 +181,7 @@ class Landing extends Component {
             
           </Col>
           <div style={{display: 'flex', justifyContent: 'center'}}>
-          <Button >Submit</Button>
+          <Button color="primary">Submit</Button>
           </div>
         </Form>
         
