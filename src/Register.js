@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Tooltip, Container, Form, Col,
-FormGroup, Input, Jumbotron } from 'reactstrap';
+FormGroup, Input, Jumbotron, Toast, ToastHeader} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import Notice from './components/Notice'
 
@@ -9,14 +9,19 @@ const Register = (props) => {
   const toggle = () => setTooltipOpen(!tooltipOpen);
   return (  
     <div>
+    <Toast style={{padding:'0'}}>
+      <ToastHeader>
+        @productname
+      </ToastHeader>
+
       <Tooltip placement="right" isOpen={tooltipOpen} target="notice" 
-      toggle={toggle}><Notice/></Tooltip>
+      toggle={toggle}><Notice type="register"/></Tooltip>
       <Jumbotron>
       <div>
         <h4 style={{color:'green',display: 'flex', 
         justifyContent: 'center'}}>Register</h4>
       </div>
-      <Notice />
+      <Notice type="register"/>
       <Container className="App" id="notice">
         <Col>
           <FormGroup >
@@ -42,7 +47,8 @@ const Register = (props) => {
       </Container>
       <div >
         <div style={{display: 'flex', justifyContent: 'right'}}>
-          <Button color="success">Submit {'>'}</Button>
+          <NavLink to={process.env.PUBLIC_URL +"/mock/dashboard"}
+          className="btn btn-success">Let's go {'>'}</NavLink>
         </div>
         <div style={{display: 'flex', justifyContent: 'right'}}>
           <NavLink to={process.env.PUBLIC_URL +"/mock/"}
@@ -50,6 +56,8 @@ const Register = (props) => {
         </div>
       </div>
     </Jumbotron>
+
+    </Toast>
     </div>
   );
 

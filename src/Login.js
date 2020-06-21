@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {
   Container, Col, Form,
   FormGroup, Input,
-  Button, Tooltip 
+  Button, Tooltip, Toast, ToastHeader
 } from 'reactstrap';
 import Jumbotron from 'reactstrap/lib/Jumbotron';
 import { NavLink } from 'react-router-dom';
@@ -16,8 +16,12 @@ const Login = (props) => {
 
   return (
     <div>
+    <Toast style={{padding:'0'}}>
+      <ToastHeader>
+        @productname
+      </ToastHeader>
     <Tooltip placement="right" isOpen={tooltipOpen} target="notice" 
-      toggle={toggle}><Notice/></Tooltip>
+      toggle={toggle}><Notice type="login"/></Tooltip>
     <Jumbotron>
       <div style={{display: 'flex', justifyContent: 'center'}}>
         <Container className="App">
@@ -25,7 +29,7 @@ const Login = (props) => {
         <div style={{textAlign:"center", width:"20em"}}>
           <h4 style={{color:"green"}}>Sign in and get grinding.</h4>
         </div>
-        <Notice />
+        <Notice type="login"/>
           <Form className="form" id="notice">
             <Col>
               <FormGroup>
@@ -48,7 +52,8 @@ const Login = (props) => {
           <a style={{color:"green"}} >Don't have an account?</a>
         </div>
         <div style={{display: 'flex', justifyContent: 'right'}}>
-          <Button color="success">Let's go {'>'}</Button>
+          <NavLink to={process.env.PUBLIC_URL +"/mock/dashboard"}
+          className="btn btn-success">Let's go {'>'}</NavLink>
         </div>
         <div style={{display: 'flex', justifyContent: 'right'}}>
           <NavLink to={process.env.PUBLIC_URL +"/mock/"}
@@ -56,6 +61,7 @@ const Login = (props) => {
         </div>
       </div>
     </Jumbotron>
+    </Toast>
     </div>
   );
 }
