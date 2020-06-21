@@ -4,7 +4,8 @@ import { Button, ButtonGroup, ButtonDropdown,
         DropdownMenu, DropdownItem, 
         DropdownToggle, Collapse, Navbar,
         NavbarToggler, NavbarBrand, Nav,
-        NavItem, NavLink, Container, Progress } from 'reactstrap';
+        NavItem, Container, Progress } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 import Recruiters from '../Recruiters'
 
 class AppNavbar extends Component {
@@ -43,11 +44,28 @@ class AppNavbar extends Component {
               Settings
             </DropdownToggle>
             <DropdownMenu right>
-              <DropdownItem color="light">Profile</DropdownItem>
-              <DropdownItem href={process.env.PUBLIC_URL +"/mock/dashboard"}>
-                Find Other Interns</DropdownItem>
-              <DropdownItem href={process.env.PUBLIC_URL +"/mock/recruiters"}>
-                Find Recruiters</DropdownItem>
+
+              <NavLink style={{color:'black'}} 
+                to={process.env.PUBLIC_URL + "/mock/profile"}>
+                <DropdownItem>
+                Profile
+                </DropdownItem>
+              </NavLink>
+   
+              <NavLink style={{color:'black', padding:'0'}} 
+                to={process.env.PUBLIC_URL + "/mock/dashboard"}>
+                <DropdownItem>
+                Find Other Interns
+                </DropdownItem>
+              </NavLink>
+ 
+              <NavLink style={{color:'black', padding:'0'}} 
+                to={process.env.PUBLIC_URL + "/mock/recruiters"}>
+                <DropdownItem>
+                Find Recruiters
+                </DropdownItem>
+              </NavLink>
+
               <DropdownItem href={process.env.PUBLIC_URL}>Sign Out</DropdownItem>
             </DropdownMenu>
           </ButtonDropdown>

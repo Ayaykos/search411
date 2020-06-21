@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {
   Container, Col, Form,
   FormGroup, Input,
-  Button, Tooltip, Toast, ToastHeader
+  Tooltip, Toast, ToastHeader
 } from 'reactstrap';
 import Jumbotron from 'reactstrap/lib/Jumbotron';
 import { NavLink } from 'react-router-dom';

@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Container, Jumbotron, Toast, ToastHeader
-} from 'reactstrap';
+import { Container, Jumbotron, Toast, ToastHeader } from 'reactstrap';
 import { NavLink } from 'react-router-dom'
 
 function MainMenu() {
@@ -23,7 +21,8 @@ function MainMenu() {
         </a>
       </div>
       <div>
-        <Container style={{display: 'flex', justifyContent: 'center', padding:"1em",}}>
+        <Container style={{display: 'flex', 
+          justifyContent: 'center', padding:"1em",}}>
           <NavLink to={process.env.PUBLIC_URL + "/mock/register"} 
             className="btn btn-success">Sign Up</NavLink>
         </Container> 
@@ -32,7 +31,9 @@ function MainMenu() {
         Already a member?
       </div>
       <div style={{display: 'flex', justifyContent: 'center'}}>
-        <NavLink to={process.env.PUBLIC_URL + "/mock/login"}>Sign In</NavLink>
+        <NavLink to={process.env.PUBLIC_URL + "/mock/login"}>
+          Sign In
+        </NavLink>
       </div>
       </Jumbotron>
 

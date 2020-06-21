@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {Toast, ToastBody, ToastHeader,  Form, FormGroup, Badge, 
-  Input, Tooltip, UncontrolledCollapse } from 'reactstrap';
+  Input, Tooltip, UncontrolledCollapse, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { MdMoreHoriz } from "react-icons/md";
 import Notice from './components/Notice'
 
 const Comments = (props) =>  {
@@ -48,7 +49,11 @@ const Comments = (props) =>  {
               <b>@homer</b><br></br>same, still don't have any internship experience
             </Toast>
             <Toast style={{padding:'0.6em', justifyContent:'right'}}>
-              <b>@eecs_</b><br></br>What major are you?
+              <b>@eecs_</b>{'  '}
+              <Badge color="primary" pill >
+                Recruiter
+              </Badge>
+              <br></br>What's your major?
             </Toast>
 
             <ToastHeader >
@@ -78,7 +83,11 @@ const Comments = (props) =>  {
           <UncontrolledCollapse toggler="#comments2" 
             style={{background: 'lightgray', padding:'0'}}>
             <Toast style={{padding:'0.6em', justifyContent:'right'}}>
-              <b>@alyssa</b><br></br>You should definitely contact Student 
+              <b>@alyssa</b>{'  '}
+              <Badge color="primary" pill >
+                Recruiter
+              </Badge>
+              <br></br>You should definitely contact Student 
               Financial Services and see what options you have available
             </Toast>
             <Toast style={{padding:'0.6em', justifyContent:'right'}}>
@@ -189,6 +198,16 @@ const Comments = (props) =>  {
           </UncontrolledCollapse >
         </div> : null }
       </Toast>
+      {props.logged_in ?
+        <div>
+          <div style={{paddingBottom:"2em"}}>
+          <Button id="notice" color="link" style={{padding:"0"}}>
+            <Badge pill color="primary">
+            <MdMoreHoriz />
+            </Badge>
+          </Button>
+          </div>
+        </div> : null }
     </div>
   )
 }

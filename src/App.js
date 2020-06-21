@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import { Container, Toast, ToastBody, ToastHeader, Jumbotron } from 'reactstrap';
-import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
-import { Redirect } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AppNavbar from './components/AppNavbar';
 import MainMenu from './MainMenu';
 import Register from './Register';
 import Login from './Login';
 import Comments from './Comments';
 import Recruiters from './Recruiters';
-import Interns from './Interns';
+import Profile from './Profile';
 import BackgroundSlider from './components/BackgroundSlider'
 import './css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -40,25 +38,19 @@ class App extends Component {
               component={Comments}/>
             <Route exact path={process.env.PUBLIC_URL + "/mock/dashboard"} 
               render={() => (<Comments logged_in={true}/>)} />
-
-            <Route exact path={process.env.PUBLIC_URL + "/mock/interns"} 
-              render={() => (<Interns/>)} />
-
-              <Route exact path={process.env.PUBLIC_URL + "/mock/recruiters"} 
+            <Route exact path={process.env.PUBLIC_URL + "/mock/recruiters"} 
               render={() => (<Recruiters/>)} />
+            <Route exact path={process.env.PUBLIC_URL + "/mock/profile"} 
+              render={() => (<Profile/>)} />
             </Switch>
+
             <Switch>
-
-
               <Route exact path={process.env.PUBLIC_URL + "/mock"} 
                 component={MainMenu}/>
               <Route exact path={process.env.PUBLIC_URL + "/mock/register"} 
                 component={Register}/>
               <Route exact path={process.env.PUBLIC_URL + "/mock/login"} 
                 component={Login}/>
-
-
-
             </Switch>
           </div>
           

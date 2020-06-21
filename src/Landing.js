@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, 
+  Route, Switch, NavLink } from 'react-router-dom';
 import {App } from './App';
 import {
   Alert,
@@ -19,19 +20,20 @@ import axios from 'axios';
 class Loading extends Component {
   render() {
     return (
-      <div>{this.props.loading ? <Spinner style={{ width: '3rem', height: '3rem' }} size="sm" color="primary" /> : <h1></h1>}
+      <div>{this.props.loading ? <Spinner 
+        style={{ width: '3rem', height: '3rem' }} 
+        size="sm" color="primary" /> : <h1></h1>}
       </div>
     )
   }
 }
 class Sent extends Component {
   render() {
-    console.log(this.props.sent, !this.props.loading, !this.props.noemail)
     return (
-      <div>
-        
-      <Alert color="success" isOpen={this.props.sent && !this.props.loading && !this.props.noemail}>Thank you!</Alert>
-
+      <div>        
+        <Alert color="success" 
+          isOpen={this.props.sent && !this.props.loading && 
+          !this.props.noemail}>Thank you!</Alert>
       </div>
     )
   }
@@ -66,7 +68,8 @@ class Landing extends Component {
     this.setState({     
       loading: true
     })  
-    axios.post(this.state.CORS_PROXY + this.state.GOOGLE_FORM_ACTION_URL, formData)
+    axios.post(this.state.CORS_PROXY + 
+      this.state.GOOGLE_FORM_ACTION_URL, formData)
       .then(() => {     
         this.setState({     
           email: '',
@@ -125,12 +128,15 @@ class Landing extends Component {
       <div>
         <Jumbotron>
           <hr className="my-2" />
-          <p className="lead" style={{display: 'flex', 
-            justifyContent: 'center'}}>Description of our problem/solution.</p>
+          <p className="lead" 
+            style={{display: 'flex', justifyContent: 'center'}}>
+            Description of our problem/solution.</p>
           <hr className="my-2" />
-          <p style={{display: 'flex', justifyContent: 'center'}}>Extended description.</p>
+          <p style={{display: 'flex', justifyContent: 'center'}}>
+              Extended description.</p>
           <div style={{display: 'flex', justifyContent: 'center'}}>
-          <NavLink to={process.env.PUBLIC_URL + "/mock/"} className="btn btn-primary">Mock Website</NavLink>
+          <NavLink to={process.env.PUBLIC_URL + "/mock/"} 
+            className="btn btn-primary">Mock Website</NavLink>
           </div>
         </Jumbotron>
       <div>
@@ -139,7 +145,8 @@ class Landing extends Component {
       <div style={{display: 'flex', justifyContent: 'center'}}>
       <h2 style={{textAlign:"center"}}>{this.props.usertype}</h2>
       
-      <Container className="App" style={{display: 'flex', justifyContent: 'center'}}>
+      <Container className="App" 
+        style={{display: 'flex', justifyContent: 'center'}}>
 
         <Form  className="form" onSubmit={this.handleSubmit}>
           <Col>
@@ -168,34 +175,45 @@ class Landing extends Component {
       </Container>
       </div>
       <div style={{display: 'flex', justifyContent: 'center', padding:"10px"}}>
-        <Alert color="danger" isOpen={this.state.validate.noemail}>Please enter an email.</Alert>
+        <Alert color="danger" 
+          isOpen={this.state.validate.noemail}>Please enter an email.</Alert>
         </div>
       <div style={{display: 'flex', justifyContent: 'center', padding:"10px"}}>
 
         <Loading loading={this.state.loading}/>
-        <Sent sent={this.state.sent} loading={this.state.loading} noemail={this.state.validate.noemail}/>
+        <Sent sent={this.state.sent} loading={this.state.loading} 
+          noemail={this.state.validate.noemail}/>
       </div>
       </div>
     );
   }
 }
 class LandingPage extends Component {
-    render() {
-        return (
-            <Router>
-            <div>
-              <Switch>
-                <Route exact path={process.env.PUBLIC_URL +"/"} component={Landing} />
-                <Route exact path={process.env.PUBLIC_URL +"/mock"} component={App} />
-                <Route exact path={process.env.PUBLIC_URL +"/mock/login"} component={App} />
-                <Route exact path={process.env.PUBLIC_URL +"/mock/register"} component={App} />
-                <Route exact path={process.env.PUBLIC_URL +"/mock/dashboard"} component={App} />
-                <Route exact path={process.env.PUBLIC_URL +"/mock/recruiters"} component={App} />
-                <Route exact path={process.env.PUBLIC_URL +"/mock/interns"} component={App} />
-              </Switch>
-            </div>
-            </Router>
-        )
-    }
+  render() {
+    return (
+        <Router>
+        <div>
+          <Switch>
+            <Route exact path={process.env.PUBLIC_URL +"/"} 
+              component={Landing} />
+            <Route exact path={process.env.PUBLIC_URL +"/mock"} 
+              component={App} />
+            <Route exact path={process.env.PUBLIC_URL +"/mock/login"} 
+              component={App} />
+            <Route exact path={process.env.PUBLIC_URL +"/mock/register"} 
+              component={App} />
+            <Route exact path={process.env.PUBLIC_URL +"/mock/dashboard"} 
+              component={App} />
+            <Route exact path={process.env.PUBLIC_URL +"/mock/recruiters"} 
+              component={App} />
+            <Route exact path={process.env.PUBLIC_URL +"/mock/interns"} 
+              component={App} />
+            <Route exact path={process.env.PUBLIC_URL +"/mock/profile"} 
+              component={App} />
+          </Switch>
+        </div>
+        </Router>
+    )
+  }
 }
 export default LandingPage;
