@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, 
   Route, Switch, NavLink } from 'react-router-dom';
-import {App } from './App';
+import { App } from './App';
 import {
   Alert,
   Container,
@@ -135,7 +135,7 @@ class Landing extends Component {
           <p style={{display: 'flex', justifyContent: 'center'}}>
               Extended description.</p>
           <div style={{display: 'flex', justifyContent: 'center'}}>
-          <NavLink to={process.env.PUBLIC_URL + "/mock/"} 
+          <NavLink to={process.env.PUBLIC_URL + "/mock"} 
             className="btn btn-primary">Mock Website</NavLink>
           </div>
         </Jumbotron>

@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
 import { Button, ButtonGroup, ButtonDropdown, 
         DropdownMenu, DropdownItem, 
-        DropdownToggle, Collapse, Navbar,
-        NavbarToggler, NavbarBrand, Nav,
-        NavItem, Container, Progress } from 'reactstrap';
+        DropdownToggle,Navbar, Container } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import Recruiters from '../Recruiters'
 
 class AppNavbar extends Component {
   constructor(props){
@@ -33,11 +29,25 @@ class AppNavbar extends Component {
           </a>
 
           <ButtonGroup>
-          <Button color="light">Home</Button>
+          <NavLink style={{color:'black', padding:'0'}} 
+            to={process.env.PUBLIC_URL + "/mock"}>
+            <Button color="light">
+            Home
+            </Button>
+          </NavLink>
 
-          <Button color="light">About</Button>
-          <Button color="light">Contact</Button>
-          <Button color="light">FAQ</Button>
+          <NavLink style={{color:'black', padding:'0'}} 
+            to={process.env.PUBLIC_URL + "/mock/dashboard"}>
+            <Button color="light">
+            Find Other Interns
+            </Button>
+          </NavLink>
+          <NavLink style={{color:'black', padding:'0'}} 
+            to={process.env.PUBLIC_URL + "/mock/recruiters"}>
+            <Button color="light">
+            Find Recruiters
+            </Button>
+          </NavLink>
 
           <ButtonDropdown color="light" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle caret color="light">
@@ -51,22 +61,9 @@ class AppNavbar extends Component {
                 Profile
                 </DropdownItem>
               </NavLink>
-   
-              <NavLink style={{color:'black', padding:'0'}} 
-                to={process.env.PUBLIC_URL + "/mock/dashboard"}>
-                <DropdownItem>
-                Find Other Interns
-                </DropdownItem>
-              </NavLink>
- 
-              <NavLink style={{color:'black', padding:'0'}} 
-                to={process.env.PUBLIC_URL + "/mock/recruiters"}>
-                <DropdownItem>
-                Find Recruiters
-                </DropdownItem>
-              </NavLink>
 
               <DropdownItem href={process.env.PUBLIC_URL}>Sign Out</DropdownItem>
+
             </DropdownMenu>
           </ButtonDropdown>
         </ButtonGroup >
