@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
-import AppNavbar from './components/AppNavbar';
-import Register from './Register';
-import LoginMopar from './LoginMopar';
-import {App, FCACheck} from './App';
-import {  Dashboard,
-    GetStarted,
-    BetaFeatures,
-    FAQ} from './Dashboard';
+import {App } from './App';
 import {
   Alert,
   Container,
@@ -18,10 +11,11 @@ import {
   Jumbotron,
   Button,
   Spinner
-  
 } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios';
+
+
 class Loading extends Component {
   render() {
     return (
@@ -190,17 +184,12 @@ class LandingPage extends Component {
         return (
             <Router>
             <div>
-                <Switch>
-                    <Route exact path={process.env.PUBLIC_URL +"/"} component={Landing} />
-                    <Route exact path={process.env.PUBLIC_URL +"/mock"} component={App} />
-                    <Route exact path={process.env.PUBLIC_URL +"/mock/register"} component={FCACheck} />
-                    <Route exact path={process.env.PUBLIC_URL +"/mock/register/employee"} 
-                        render={(props) => <Register {...props} usertype="FCA"/>} />
-                    <Route exact path={process.env.PUBLIC_URL +"/mock/register/regular"} 
-                        render={(props) => <Register {...props} usertype="Regular"/>} />
-                    <Route exact path={process.env.PUBLIC_URL +"/mock/login"} component={LoginMopar} />
-                    <Route exact path={process.env.PUBLIC_URL +"/mock/dashboard"} component={Dashboard} />
-                </Switch>
+              <Switch>
+                <Route exact path={process.env.PUBLIC_URL +"/"} component={Landing} />
+                <Route exact path={process.env.PUBLIC_URL +"/mock"} component={App} />
+                <Route exact path={process.env.PUBLIC_URL +"/mock/login"} component={App} />
+                <Route exact path={process.env.PUBLIC_URL +"/mock/register"} component={App} />
+              </Switch>
             </div>
             </Router>
         )

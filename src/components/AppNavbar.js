@@ -43,7 +43,7 @@ class AppNavbar extends Component {
             <DropdownToggle caret color="light">
               Settings
             </DropdownToggle>
-            <DropdownMenu >
+            <DropdownMenu right>
               <DropdownItem color="light">Profile</DropdownItem>
               <DropdownItem>Find Other Interns</DropdownItem>
               <DropdownItem>Find Recruiters</DropdownItem>

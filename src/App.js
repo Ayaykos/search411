@@ -1,59 +1,17 @@
 import React, { Component } from 'react';
-import { Navbar, Container, Toast, ToastBody, ToastHeader, Progress,
-Jumbotron } from 'reactstrap';
+import { Container, Toast, ToastBody, ToastHeader, Jumbotron } from 'reactstrap';
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import { Redirect } from 'react-router';
-
 import AppNavbar from './components/AppNavbar';
+import MainMenu from './MainMenu';
 import Register from './Register';
-import LoginMopar from './LoginMopar';
-import {  Dashboard,
-  GetStarted,
-  BetaFeatures,
-  FAQ} from './Dashboard';
+import Login from './Login';
 import BackgroundSlider from './components/BackgroundSlider'
-import image1 from './img/basebg.png'
-import './App.css';
+import './css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import image1 from './img/background.png'
 
-class FCACheck extends Component {
-  render() {
-    return (
-       <Redirect to={process.env.PUBLIC_URL + "/mock/register/regular"} />
-    )
-  }
-}
-class SignUp extends Component {
-  render() {
 
-    return (
-      <div>
-        <Jumbotron>
-        <p style={{display: 'flex', justifyContent: 'center'}}>
-        This doesn't have to be you.
-        </p>
-        <div style={{display: 'flex', justifyContent: 'center', 
-          padding:"2em", bgcolor: "grey"}}>
-          <a href="/search411/mock" >
-          <h1>Logo</h1>
-          </a>
-        </div>
-        <div>
-          <Container style={{display: 'flex', justifyContent: 'center', padding:"1em",}}>
-            <NavLink to={process.env.PUBLIC_URL + "/mock/register"} className="btn btn-success">Sign Up</NavLink>
-          </Container> 
-        </div>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-          Already a member?
-        </div>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-          <NavLink to={process.env.PUBLIC_URL + "/mock/login"}> Sign In</NavLink>
-        </div>
-        </Jumbotron>
-      </div>
-    )
-  }
-}
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -65,7 +23,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      showLogin: false,
+      showRegister: false,
     }
   }
   render() {
@@ -124,22 +84,19 @@ class App extends Component {
 
             </div>
             <Switch>
-            <Toast>
+            <Toast style={{padding:'0'}}>
               <ToastHeader>
                 @productname
               </ToastHeader>
-            
-              <Route exact path={process.env.PUBLIC_URL + "/mock/"} component={SignUp} />
-              <Route exact path={process.env.PUBLIC_URL + "/mock/register"} component={FCACheck} />
-              <Route exact path={process.env.PUBLIC_URL + "/mock/register/employee" }
-                render={(props) => <Register {...props} usertype="FCA"/>} />
-              <Route exact path={process.env.PUBLIC_URL + "/mock/register/regular"} 
-                render={(props) => <Register {...props} usertype="Regular"/>} />
-              <Route exact path={process.env.PUBLIC_URL + "/mock/login"} component={LoginMopar} />
-              <Route exact path={process.env.PUBLIC_URL + "/mock/dashboard"} component={Dashboard} />
-              <ToastBody>
-                <a href="https://umich.edu">Copyright © 2020 <br></br>University of Michigan</a>
-              </ToastBody>
+
+              <Route exact path={process.env.PUBLIC_URL + "/mock"} 
+                component={MainMenu}/>
+              <Route exact path={process.env.PUBLIC_URL + "/mock/register"} 
+                component={Register}/>
+              <Route exact path={process.env.PUBLIC_URL + "/mock/login"} 
+                component={Login}/>
+
+
               </Toast>
             </Switch>
           </div>
@@ -149,11 +106,9 @@ class App extends Component {
         <BackgroundSlider
           images={shuffleArray([image1])}
           duration={60} transition={20} />
-
-
       </div>
     );
   }
 }
 
-export { App, FCACheck} ;
+export { App } ;
