@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
-import topLogo from '../img/UconnectlabBetaWhite.png'
 import { Button, ButtonGroup, ButtonDropdown, 
         DropdownMenu, DropdownItem, 
         DropdownToggle, Collapse, Navbar,
