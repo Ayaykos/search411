@@ -22,7 +22,7 @@ const Comments = (props) =>  {
           <FormGroup>
             <Input type="textarea" placeholder="Body"/>
             <Badge href={process.env.PUBLIC_URL + "/mock/dashboard#"}
-            color="dark" id="notice">
+            color="primary" pill id="notice">
             Submit</Badge>
           </FormGroup>
         </Form>

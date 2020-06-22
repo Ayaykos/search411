@@ -1,81 +1,109 @@
-import React, { Component } from 'react';
-import { Button, ButtonGroup, ButtonDropdown, 
-        DropdownMenu, DropdownItem, 
-        DropdownToggle,Navbar, Container } from 'reactstrap';
+import React, { useState } from 'react';
+import { Button, NavItem, UncontrolledDropdown, Collapse, 
+        DropdownMenu, DropdownItem, NavbarToggler, Nav,
+        DropdownToggle, Navbar, Container, NavbarText,
+        NavbarBrand } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import NavLogo from '../img/mainlogo.png';
+import { MdSettings } from "react-icons/md";
+import './nav.css'
 
-class AppNavbar extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      isOpen: false
-    }
-  }
-
-  toggle = () => {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    })
-  }
-
-  render() {
-
-    return (
+function RegularSettings() {
+  return (
+    <NavItem>
+    <UncontrolledDropdown nav inNavbar>
+      <DropdownToggle nav caret style={{color:"white"}}>
+        <MdSettings/>
+      </DropdownToggle>
+      <DropdownMenu right>
+        <NavLink style={{color:'black'}} 
+          to={process.env.PUBLIC_URL + "/mock/profile"}>
+          <DropdownItem>
+          Profile
+          </DropdownItem>
+        </NavLink>
+        <DropdownItem href={process.env.PUBLIC_URL}>
+          Sign Out</DropdownItem>
+      </DropdownMenu>
+    </UncontrolledDropdown>
+    </NavItem>
+  )
+}
+function HamburgerSettings() {
+  return (
     <div>
-      <Navbar color="success">
-        <Container>
-          <a href="/search411/mock" >
-            <h4 style={{color:"white"}}>Logo</h4>
-          </a>
-
-          <ButtonGroup>
+        <NavItem>
           <NavLink style={{color:'black', padding:'0'}} 
-            to={process.env.PUBLIC_URL + "/mock"}>
+            to={process.env.PUBLIC_URL + "/mock/profile"}>
             <Button color="light">
-            Home
+            Profile
             </Button>
           </NavLink>
+        </NavItem>
 
-          <NavLink style={{color:'black', padding:'0'}} 
-            to={process.env.PUBLIC_URL + "/mock/dashboard"}>
-            <Button color="light">
-            Find Other Interns
+        <NavItem>
+            <Button color="light" href={process.env.PUBLIC_URL}>
+            Sign Out
             </Button>
-          </NavLink>
-          <NavLink style={{color:'black', padding:'0'}} 
-            to={process.env.PUBLIC_URL + "/mock/recruiters"}>
-            <Button color="light">
-            Find Recruiters
-            </Button>
-          </NavLink>
+        </NavItem>
+    </div>
+  )
+}
 
-          <ButtonDropdown color="light" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle caret color="light">
-              Settings
-            </DropdownToggle>
-            <DropdownMenu right>
+const AppNavbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-              <NavLink style={{color:'black'}} 
-                to={process.env.PUBLIC_URL + "/mock/profile"}>
-                <DropdownItem>
-                Profile
-                </DropdownItem>
+  const toggle = () => setIsOpen(!isOpen);
+
+  return (
+    <div>
+      <Navbar color="success" light expand="md">
+        
+        <NavLink to={process.env.PUBLIC_URL + "/mock"} 
+          style={{padding:'0'}}>
+          <img style={{maxWidth:'2em'}} src={NavLogo} alt="Logo" />
+
+        </NavLink>
+        <NavbarToggler onClick={toggle} />
+
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className='m-auto' navbar>
+
+            <NavItem>
+              <NavLink style={{color:'black', padding:'0'}} 
+                to={process.env.PUBLIC_URL + "/mock"}>
+                <Button color="light">
+                Home
+                </Button>
               </NavLink>
+            </NavItem>
 
-              <DropdownItem href={process.env.PUBLIC_URL}>Sign Out</DropdownItem>
+            <NavItem>
+              <NavLink style={{color:'black', padding:'0'}} 
+                to={process.env.PUBLIC_URL + "/mock/dashboard"}>
+                <Button color="light">
+                Find Other Interns
+                </Button>
+              </NavLink>
+            </NavItem>
 
-            </DropdownMenu>
-          </ButtonDropdown>
-        </ButtonGroup >
-        <Button color="light"href="/search411/">Exit Mockup</Button>
-        </Container> 
+            <NavItem>
+              <NavLink style={{color:'black', padding:'0'}} 
+                to={process.env.PUBLIC_URL + "/mock/recruiters"}>
+                <Button color="light">
+                Find Recruiters
+                </Button>
+              </NavLink>
+            </NavItem>
+
+            { isOpen ?  <HamburgerSettings /> : <RegularSettings /> }
+
+          </Nav>
+        </Collapse>
 
       </Navbar>
-
-
     </div>
-    )
-  }
+  );
 }
 
 export default AppNavbar;

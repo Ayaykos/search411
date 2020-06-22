@@ -189,7 +189,8 @@ class Landing extends Component {
       </div>
       <div style={{display: 'flex', justifyContent: 'center', padding:"10px"}}>
         <Alert color="danger" 
-          isOpen={this.state.validate.noemail}>Please enter an email.</Alert>
+          isOpen={this.state.validate.noemail}>
+            Please enter an email address.</Alert>
         </div>
       <div style={{display: 'flex', justifyContent: 'center', padding:"10px"}}>
 
